@@ -17,7 +17,9 @@
 
   import CourseList from '@/components/CoursList.vue';
   import CourseFilter from '@/components/CourseFilter.vue';
-  import { courses } from '../tem-data'
+  //import { courses } from '../tem-data';
+
+  import axios from 'axios'
   
   export default {
     name: 'CoursesPage',
@@ -27,11 +29,24 @@
     },
     data(){
       return{
-        courses : courses,
-        filteredCourses : courses
+        courses : null,
+        filteredCourses : null
       }
     },
+    created(){
+      this.getCourses()
+    },
+
     methods:{
+      getCourses(){
+        axios.get("http://127.0.0.1:8000/courses/api")
+        .then(response => {
+          this.courses = response.data ;
+          this.filteredCourses = response.data ;
+        })
+      },
+
+
       filterCourses(selectedCategory){
         if(selectedCategory.length == 0 ){
           this.filterCourse = this.courses
