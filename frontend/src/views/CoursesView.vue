@@ -49,7 +49,7 @@
 
       filterCourses(selectedCategory){
         if(selectedCategory.length == 0 ){
-          this.filterCourse = this.courses
+          this.filteredCourse = this.courses
         }else{
         this.filteredCourses = this.courses.filter(course => selectedCategory.includes(course.category_id))
 

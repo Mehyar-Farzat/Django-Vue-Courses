@@ -1,6 +1,6 @@
 <template>
 <div class="row mt-5">
-  <div class="col-lg-3" v-for="course in courses" :key="courses.id">
+  <div class="col-lg-4" v-for="course in courses" :key="courses.id">
     <div class="card" >
       <img :src="course.image" class="card-img-top" alt="...">
       <div class="card-body">
