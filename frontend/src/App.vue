@@ -1,7 +1,12 @@
 
 <template>
-  <navbar/>
-  <RouterView />
+  <navbar :darkMode="darkMode" />
+  <Router>
+    <RouterLink to="/"></RouterLink>
+    <RouterView />
+
+  </Router>
+  
 </template>
 
 <script>
@@ -13,7 +18,13 @@ export default {
   name: 'App',
   components: {
     navbar
-  }
+  },
+  data() {
+    return {
+      darkMode: false
+    }
+  },
+  
 }
 </script>
 

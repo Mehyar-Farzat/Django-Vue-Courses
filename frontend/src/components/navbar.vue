@@ -13,7 +13,7 @@
 
         </li>
       </ul>
-      <DarkMode/>
+      <DarkMode :darkMode="darkMode" />    
     </div>
   </div>
     </nav>
@@ -22,10 +22,17 @@
 <script>
     import DarkMode from './DarkMode.vue';
 
-    export default {
-      name: 'NavBar',
-      components: {
+    export default {     
+      name: 'NavBar',   
+      components: {     
         DarkMode
+      },
+      props: {        // props are used to pass data from parent to child
+        darkMode:{    // darkMode is a prop
+          type: Boolean,
+          default: false
+        }
+
       }
     }
 

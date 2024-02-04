@@ -1,6 +1,6 @@
 <template>
 
-    <button class="btn btn-primary" @click="toggleDarkMode"> </button>
+    <button class="btn btn-primary" @click="toggleDarkMode"> Dark Mode </button>
 
 
 </template>
