@@ -13,13 +13,20 @@
 
         </li>
       </ul>
+      <DarkMode/>
     </div>
   </div>
     </nav>
 </template>
   
 <script>
+    import DarkMode from './DarkMode.vue';
+
     export default {
-      name: 'NavBar'
+      name: 'NavBar',
+      components: {
+        DarkMode
+      }
     }
+
 </script>
