@@ -1,22 +1,7 @@
 <template>
-    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Learn</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-            <RouterLink class="nav-link active" to="/">Courses</RouterLink>
-            <span class="visually-hidden">(current)</span>
-
-        </li>
-      </ul>
-      <DarkMode :darkMode="darkMode" @dark-mode-change="toggleDarkMode" />    
+    <div class="card">
+        <Menubar :model="items" />
     </div>
-  </div>
-    </nav>
 </template>
   
 <script>
@@ -24,21 +9,56 @@
 
     export default {     
       name: 'Navbar',   
-      components: {     
-        DarkMode
-      },
-      props: {        // props are used to pass data from parent to child
-        darkMode:{    // darkMode is a prop
-          type: Boolean,
-          default: false
-        }
-
-      },
-      methods: {
-        toggleDarkMode(){
-          this.$emit('dark-mode-change',!this.darkMode);
-        }
-      }
+      data() {
+        return {
+            items: [
+                {
+                    label: 'Home',
+                    icon: 'pi pi-home'
+                },
+                {
+                    label: 'Features',
+                    icon: 'pi pi-star'
+                },
+                {
+                    label: 'Projects',
+                    icon: 'pi pi-search',
+                    items: [
+                        {
+                            label: 'Components',
+                            icon: 'pi pi-bolt'
+                        },
+                        {
+                            label: 'Blocks',
+                            icon: 'pi pi-server'
+                        },
+                        {
+                            label: 'UI Kit',
+                            icon: 'pi pi-pencil'
+                        },
+                        {
+                            label: 'Templates',
+                            icon: 'pi pi-palette',
+                            items: [
+                                {
+                                    label: 'Apollo',
+                                    icon: 'pi pi-palette'
+                                },
+                                {
+                                    label: 'Ultima',
+                                    icon: 'pi pi-palette'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    label: 'Contact',
+                    icon: 'pi pi-envelope'
+                }
+            ]
+        };
     }
+};
 
 </script>

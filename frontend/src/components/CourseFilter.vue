@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <h3>Course Filter</h3>
+    <h3>Courses Filter</h3>
     <form>
       <div class="mt-4">
-        <label for="" class="mb-4">Filter by Category</label>
-        <div v-for="cat in category" :key="cat.id">
+        <label for="" class="cat-label">Filter by Category</label>
+        <div class="cat-checkbox" v-for="cat in category" :key="cat.id">
           <input type="checkbox"
           :value="cat.id"
           class="form-check-input"
@@ -52,7 +52,21 @@ import axios from 'axios'
 </script>
 
 <style>
-.form-check-input{
-  margin-right: 15px;
-}
+ .cat-label{
+  font-size: 1.2rem;
+    font-weight: 300;
+    color: #8898aa;
+  }
+
+  .cat-checkbox{
+    margin-bottom: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+
+  }
+
+  .form-label{
+    margin-left: 4px;
+  }
 </style>

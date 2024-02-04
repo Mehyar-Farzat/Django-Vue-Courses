@@ -8,6 +8,7 @@
         <h2>{{ course.name }}</h2>
         <h5>{{ course.category }}</h5>
         <p>{{ course.price }}$</p>
+        <p>{{ course.description }}</p>
         <button type="button" class="btn btn-secondary mt-4 ">Enroll</button>      
       </div>
     </div>
@@ -42,9 +43,3 @@ import axios from 'axios'
   
 </script>
 
-<style>
-  .image {
-    width: 500px;
-    height: 300px;
-  }
-</style>
