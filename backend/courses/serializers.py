@@ -9,6 +9,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class CourseSerializer(serializers.ModelSerializer):
+    category = serializers.StringRelatedField()
     class Meta:
         model = Course
         fields = '__all__'
