@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
-#from .filter import CourseFilter
+from .filters import CourseFilter
 
 
 from .serializers import CourseSerializer, CategorySerializer
@@ -16,7 +16,7 @@ class CourseListFilterAPI(generics.ListAPIView):
     serializer_class = CourseSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['price', 'category']
-    #filterset_class = CourseFilter
+    filterset_class = CourseFilter
 
 
 class CategoryListAPI(generics.ListAPIView):
