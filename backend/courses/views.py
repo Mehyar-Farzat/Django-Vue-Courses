@@ -18,6 +18,11 @@ class CourseListFilterAPI(generics.ListAPIView):
     filterset_fields = ['category']
     filterset_class = CourseFilter
 
+class CourseDetailAPI(generics.RetrieveAPIView):
+    queryset = Course.objects.all()
+    serializer_class = CourseSerializer
+
+
 
 class CategoryListAPI(generics.ListAPIView):
     queryset = Category.objects.all()

@@ -13,7 +13,7 @@
 
         </li>
       </ul>
-      <DarkMode :darkMode="darkMode" />    
+      <DarkMode :darkMode="darkMode" @dark-mode-change="toggleDarkMode" />    
     </div>
   </div>
     </nav>
@@ -23,7 +23,7 @@
     import DarkMode from './DarkMode.vue';
 
     export default {     
-      name: 'NavBar',   
+      name: 'Navbar',   
       components: {     
         DarkMode
       },
@@ -33,6 +33,11 @@
           default: false
         }
 
+      },
+      methods: {
+        toggleDarkMode(){
+          this.$emit('dark-mode-change',!this.darkMode);
+        }
       }
     }
 

@@ -23,7 +23,7 @@ from drf_yasg import openapi
 from django.conf import settings
 from django.conf.urls.static import static
 
-from courses.views import CourseListFilterAPI, CategoryListAPI
+from courses.views import CourseListFilterAPI, CategoryListAPI, CourseDetailAPI
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -42,6 +42,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('category/api', CategoryListAPI.as_view()),
     path('courses/api' , CourseListFilterAPI.as_view()),
+    path('courses/<int:pk>/api', CourseDetailAPI.as_view()),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 
 ]

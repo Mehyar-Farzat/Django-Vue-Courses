@@ -25,3 +25,10 @@
     }
   }
 </script>
+
+<style>
+  .image {
+    width: 500px;
+    height: 300px;
+  }
+</style>

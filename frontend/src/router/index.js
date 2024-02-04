@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import CoursesViewVue from '@/views/CoursesView.vue'
+import CoursesViewVue from '../views/CoursesView.vue'
 
 
 const router = createRouter({
