@@ -15,7 +15,7 @@ class CourseListFilterAPI(generics.ListAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['price', 'category']
+    filterset_fields = ['category']
     filterset_class = CourseFilter
 
 
