@@ -9,6 +9,9 @@ import 'bootstrap/dist/css/bootstrap-grid.min.css'
 
 //import 'primevue/resources/themes/aura-light-green/theme.css'
 import 'primevue/resources/themes/aura-dark-indigo/theme.css'
+//import 'primevue/resources/themes/lara-dark-pink/theme.css'
+//import 'primevue/resources/themes/lara-light-cyan/theme.css'
+
 import 'primeicons/primeicons.css'
 
 
